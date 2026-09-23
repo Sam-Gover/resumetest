@@ -1,0 +1,378 @@
+{
+  "$schema": "./schemas/resume_schema.json",
+  "basics": {
+    "name": "Мусаев Самед Мамедович",
+    "label": "Системный архитектор / Product Owner / Бизнес-аналитик",
+    "image": "",
+    "email": "musaev.samed@example.com",
+    "phone": "",
+    "url": "",
+    "summary": "Системный архитектор с опытом управления портфелем из 9 федеральных проектов, 70 команд и бюджетом 16 млн рублей. Специализация: бизнес-анализ, сбор и формализация требований, внедрение информационных систем, AI-автоматизация, REST API интеграции.",
+    "location": {
+      "city": "Москва",
+      "region": "",
+      "country": "Россия"
+    }
+  },
+  "work": [
+    {
+      "id": "voksis-dobro",
+      "name": "ВОКСИС.ДОБРО",
+      "position": "CEO / Product Owner",
+      "url": "",
+      "startDate": "2024-01-01",
+      "endDate": "2024-06-01",
+      "summary": "Создание MVP веб-платформы для благотворительного сектора за 2 месяца. 3 роли пользователей, 20 сценариев, 80 требований, API-интеграция с Совкомбанком.",
+      "highlights": [
+        "MVP за 2 месяца",
+        "3 роли пользователей",
+        "20 сценариев",
+        "80 требований",
+        "API-интеграция с Совкомбанком"
+      ],
+      "metrics": {
+        "timeToMVP": "2 месяца",
+        "requirements": 80,
+        "scenarios": 20,
+        "roles": 3
+      },
+      "worldPosition": { "x": -20, "y": 0, "z": -15 },
+      "buildingTheme": "blue",
+      "buildingScale": { "x": 6, "y": 8, "z": 6 },
+      "scenario": {
+        "title": "Запуск MVP платформы",
+        "description": "Соберите требования от 3 ролей, настройте API-интеграцию и запустите MVP за 2 месяца.",
+        "abilities": ["requirement_scanner", "api_portal", "ai_assistant"],
+        "steps": [
+          { "id": "gather", "text": "Соберите требования от всех 3 ролей", "type": "collect" },
+          { "id": "api", "text": "Настройте API-интеграцию с банком", "type": "connect" },
+          { "id": "launch", "text": "Запустите MVP платформу", "type": "launch" }
+        ]
+      }
+    },
+    {
+      "id": "dobro-rf",
+      "name": "Добро.рф",
+      "position": "Координатор региональных представителей",
+      "url": "",
+      "startDate": "2023-01-01",
+      "endDate": "2024-01-01",
+      "summary": "Координация работы в 89 регионах, 9 млн пользователей, 2500 организаций. Сбор обратной связи, подготовка ТЗ на антифрод, внедрение решения за 2 месяца, снижение потока заявок на 40%.",
+      "highlights": [
+        "89 регионов",
+        "9 млн пользователей",
+        "2500 организаций",
+        "Антифрод-система за 2 месяца",
+        "Снижение заявок на 40%"
+      ],
+      "metrics": {
+        "regions": 89,
+        "users": 9000000,
+        "organizations": 2500,
+        "fraudReduction": "40%",
+        "implementationTime": "2 месяца"
+      },
+      "worldPosition": { "x": 20, "y": 0, "z": -15 },
+      "buildingTheme": "green",
+      "buildingScale": { "x": 8, "y": 10, "z": 8 },
+      "scenario": {
+        "title": "Антифрод-система",
+        "description": "Соберите обратную связь из 60 регионов, выявите проблему, подготовьте ТЗ на антифрод и внедрите решение.",
+        "abilities": ["requirement_scanner", "ai_assistant", "debug_mode"],
+        "steps": [
+          { "id": "collect", "text": "Соберите обратную связь из 60 регионов", "type": "collect" },
+          { "id": "analyze", "text": "Выявите мошеннические схемы", "type": "analyze" },
+          { "id": "implement", "text": "Внедрите антифрод-решение", "type": "launch" }
+        ]
+      }
+    },
+    {
+      "id": "rssm",
+      "name": "РССМ",
+      "position": "Проектный менеджер",
+      "url": "",
+      "startDate": "2022-06-01",
+      "endDate": "2023-06-01",
+      "summary": "Управление портфелем из 9 федеральных проектов, 70 команд, 28 000 заявок, бюджетом 16 млн рублей. Экономия 3 млн рублей за счёт оптимизации процессов.",
+      "highlights": [
+        "9 федеральных проектов",
+        "70 команд",
+        "28 000 заявок",
+        "Бюджет 16 млн рублей",
+        "Экономия 3 млн рублей"
+      ],
+      "metrics": {
+        "projects": 9,
+        "teams": 70,
+        "requests": 28000,
+        "budget": 16000000,
+        "savings": 3000000
+      },
+      "worldPosition": { "x": 0, "y": 0, "z": -30 },
+      "buildingTheme": "purple",
+      "buildingScale": { "x": 10, "y": 12, "z": 10 },
+      "scenario": {
+        "title": "Управление портфелем проектов",
+        "description": "Координируйте 9 федеральных проектов, распределите ресурсы 70 команд и оптимизируйте бюджет.",
+        "abilities": ["project_launcher", "ai_assistant", "automation"],
+        "steps": [
+          { "id": "plan", "text": "Распределите ресурсы между 9 проектами", "type": "collect" },
+          { "id": "optimize", "text": "Оптимизируйте бюджет и процессы", "type": "analyze" },
+          { "id": "deliver", "text": "Доставьте результаты всех проектов", "type": "launch" }
+        ]
+      }
+    },
+    {
+      "id": "psb",
+      "name": "Банк ПСБ",
+      "position": "Стажёр-тестировщик / Системный аналитик",
+      "url": "",
+      "startDate": "2021-09-01",
+      "endDate": "2022-06-01",
+      "summary": "12 Scrum-спринтов, 7 релизов. Разработка SRS, BRD, UML-диаграмм, REST API спецификаций, приёмочное тестирование.",
+      "highlights": [
+        "12 Scrum-спринтов",
+        "7 релизов",
+        "SRS и BRD документация",
+        "UML-диаграммы",
+        "REST API спецификации"
+      ],
+      "metrics": {
+        "sprints": 12,
+        "releases": 7,
+        "backlogTasks": 80,
+        "timeReduction": "75%"
+      },
+      "worldPosition": { "x": -20, "y": 0, "z": 15 },
+      "buildingTheme": "orange",
+      "buildingScale": { "x": 5, "y": 6, "z": 5 },
+      "scenario": {
+        "title": "Scrum-цикл в банке",
+        "description": "Пройдите 12 спринтов: от сбора требований до приёмочного тестирования и релиза.",
+        "abilities": ["debug_mode", "requirement_scanner", "system_installer"],
+        "steps": [
+          { "id": "srs", "text": "Подготовьте SRS и BRD", "type": "collect" },
+          { "id": "api", "text": "Спроектируйте REST API", "type": "connect" },
+          { "id": "test", "text": "Проведите приёмочное тестирование", "type": "analyze" },
+          { "id": "release", "text": "Выпустите релиз", "type": "launch" }
+        ]
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "business_analysis",
+      "name": "Бизнес-анализ",
+      "level": 90,
+      "category": "analysis",
+      "abilityMapping": "requirement_scanner"
+    },
+    {
+      "id": "system_analysis",
+      "name": "Системный анализ",
+      "level": 85,
+      "category": "analysis",
+      "abilityMapping": "requirement_scanner"
+    },
+    {
+      "id": "requirements",
+      "name": "Сбор и формализация требований",
+      "level": 95,
+      "category": "analysis",
+      "abilityMapping": "requirement_scanner"
+    },
+    {
+      "id": "rest_api",
+      "name": "REST API / Интеграции",
+      "level": 80,
+      "category": "technical",
+      "abilityMapping": "api_portal"
+    },
+    {
+      "id": "ai_assisted",
+      "name": "AI-assisted development",
+      "level": 85,
+      "category": "technical",
+      "abilityMapping": "ai_assistant"
+    },
+    {
+      "id": "generative_ai",
+      "name": "Generative AI",
+      "level": 80,
+      "category": "technical",
+      "abilityMapping": "ai_assistant"
+    },
+    {
+      "id": "agentic_ai",
+      "name": "Agentic AI",
+      "level": 75,
+      "category": "technical",
+      "abilityMapping": "ai_assistant"
+    },
+    {
+      "id": "project_management",
+      "name": "Управление проектами",
+      "level": 90,
+      "category": "management",
+      "abilityMapping": "project_launcher"
+    },
+    {
+      "id": "scrum",
+      "name": "Scrum / SDLC",
+      "level": 85,
+      "category": "management",
+      "abilityMapping": "project_launcher"
+    },
+    {
+      "id": "testing",
+      "name": "Приёмочное тестирование (UAT)",
+      "level": 80,
+      "category": "quality",
+      "abilityMapping": "debug_mode"
+    },
+    {
+      "id": "bitrix24",
+      "name": "Bitrix24 / CRM / ЭДО",
+      "level": 75,
+      "category": "systems",
+      "abilityMapping": "system_installer"
+    },
+    {
+      "id": "automation",
+      "name": "Автоматизация бизнес-процессов",
+      "level": 85,
+      "category": "systems",
+      "abilityMapping": "automation"
+    },
+    {
+      "id": "excel",
+      "name": "MS Excel / Макросы",
+      "level": 80,
+      "category": "tools",
+      "abilityMapping": "automation"
+    },
+    {
+      "id": "jira",
+      "name": "Jira / Confluence",
+      "level": 85,
+      "category": "tools",
+      "abilityMapping": "project_launcher"
+    },
+    {
+      "id": "swagger",
+      "name": "Swagger / Postman",
+      "level": 80,
+      "category": "technical",
+      "abilityMapping": "api_portal"
+    },
+    {
+      "id": "uml",
+      "name": "UML / SRS / BRD",
+      "level": 85,
+      "category": "analysis",
+      "abilityMapping": "requirement_scanner"
+    }
+  ],
+  "abilities": [
+    {
+      "id": "requirement_scanner",
+      "name": "Сканер требований",
+      "description": "Подсвечивает скрытые объекты, подсказки и «боли пользователей». Позволяет выявить проблемы в сцене.",
+      "icon": "🔍",
+      "hotkey": "1",
+      "cooldown": 5,
+      "duration": 10,
+      "color": "#00ff88"
+    },
+    {
+      "id": "ai_assistant",
+      "name": "AI-Ассистент",
+      "description": "Дрон, который автоматически собирает данные, атакует баги, анализирует логи и даёт подсказки.",
+      "icon": "🤖",
+      "hotkey": "2",
+      "cooldown": 15,
+      "duration": 20,
+      "color": "#00aaff"
+    },
+    {
+      "id": "api_portal",
+      "name": "API-Портал",
+      "description": "Создаёт две связанные точки телепортации между удалёнными частями мира. Демонстрирует маршрутизацию данных.",
+      "icon": "🌐",
+      "hotkey": "3",
+      "cooldown": 10,
+      "duration": 15,
+      "color": "#ff8800"
+    },
+    {
+      "id": "system_installer",
+      "name": "Системный инсталлятор",
+      "description": "Позволяет размещать модули (БД, веб-сервер, логгер) на площадках и соединять их каналами данных.",
+      "icon": "⚙️",
+      "hotkey": "4",
+      "cooldown": 8,
+      "duration": 12,
+      "color": "#aa00ff"
+    },
+    {
+      "id": "project_launcher",
+      "name": "Запуск фазы проекта",
+      "description": "Спавнит NPC-разработчиков, которые автоматически выполняют задачи. Игрок координирует.",
+      "icon": "🚀",
+      "hotkey": "5",
+      "cooldown": 20,
+      "duration": 25,
+      "color": "#ff0066"
+    },
+    {
+      "id": "debug_mode",
+      "name": "Режим отладки",
+      "description": "Подсвечивает дефекты, показывает логи, позволяет воспроизвести баг и исправить его.",
+      "icon": "🐛",
+      "hotkey": "6",
+      "cooldown": 5,
+      "duration": 10,
+      "color": "#ff3333"
+    },
+    {
+      "id": "automation",
+      "name": "Автоматизация документооборота",
+      "description": "Массово конвертирует сырые данные в готовые документы, сокращая время на 60-75%.",
+      "icon": "📄",
+      "hotkey": "7",
+      "cooldown": 12,
+      "duration": 8,
+      "color": "#44ff44"
+    }
+  ],
+  "worldConfig": {
+    "hubPosition": { "x": 0, "y": 0, "z": 0 },
+    "groundSize": 200,
+    "skyColor": "#0a0a2e",
+    "ambientLight": 0.3,
+    "directionalLight": 0.8,
+    "districts": [
+      {
+        "id": "projects",
+        "name": "Квартал проектов",
+        "description": "Здания, каждое соответствует месту работы или крупному проекту",
+        "center": { "x": 0, "y": 0, "z": -20 },
+        "color": "#1a1a4e"
+      },
+      {
+        "id": "tech",
+        "name": "Квартал технологий",
+        "description": "Интерактивные объекты: API, AI, автоматизация, тестирование",
+        "center": { "x": 25, "y": 0, "z": 10 },
+        "color": "#0a2a4e"
+      },
+      {
+        "id": "strategy",
+        "name": "Квартал стратегии",
+        "description": "Управление проектами, командой, бюджетами, KPI",
+        "center": { "x": -25, "y": 0, "z": 10 },
+        "color": "#2a0a4e"
+      }
+    ]
+  }
+}

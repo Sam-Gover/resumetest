@@ -1,0 +1,150 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CareerForge Resume Schema",
+  "description": "Schema for data-driven 3D resume game content",
+  "type": "object",
+  "required": ["basics", "work", "skills", "abilities", "worldConfig"],
+  "properties": {
+    "basics": {
+      "type": "object",
+      "required": ["name", "label", "summary"],
+      "properties": {
+        "name": { "type": "string" },
+        "label": { "type": "string" },
+        "email": { "type": "string" },
+        "summary": { "type": "string" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": { "type": "string" },
+            "country": { "type": "string" }
+          }
+        }
+      }
+    },
+    "work": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "position", "summary", "worldPosition", "buildingTheme"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "position": { "type": "string" },
+          "startDate": { "type": "string" },
+          "endDate": { "type": "string" },
+          "summary": { "type": "string" },
+          "highlights": { "type": "array", "items": { "type": "string" } },
+          "metrics": { "type": "object" },
+          "worldPosition": {
+            "type": "object",
+            "required": ["x", "y", "z"],
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "z": { "type": "number" }
+            }
+          },
+          "buildingTheme": { "type": "string" },
+          "buildingScale": {
+            "type": "object",
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "z": { "type": "number" }
+            }
+          },
+          "scenario": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": "string" },
+              "abilities": { "type": "array", "items": { "type": "string" } },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "text": { "type": "string" },
+                    "type": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "level", "category"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "level": { "type": "number", "minimum": 0, "maximum": 100 },
+          "category": { "type": "string" },
+          "abilityMapping": { "type": "string" }
+        }
+      }
+    },
+    "abilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description", "icon", "hotkey"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "icon": { "type": "string" },
+          "hotkey": { "type": "string" },
+          "cooldown": { "type": "number" },
+          "duration": { "type": "number" },
+          "color": { "type": "string" }
+        }
+      }
+    },
+    "worldConfig": {
+      "type": "object",
+      "required": ["hubPosition", "groundSize", "districts"],
+      "properties": {
+        "hubPosition": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "z": { "type": "number" }
+          }
+        },
+        "groundSize": { "type": "number" },
+        "skyColor": { "type": "string" },
+        "ambientLight": { "type": "number" },
+        "directionalLight": { "type": "number" },
+        "districts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "center"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "description": { "type": "string" },
+              "center": {
+                "type": "object",
+                "properties": {
+                  "x": { "type": "number" },
+                  "y": { "type": "number" },
+                  "z": { "type": "number" }
+                }
+              },
+              "color": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
