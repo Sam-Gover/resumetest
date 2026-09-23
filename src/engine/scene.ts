@@ -15,9 +15,13 @@ export class SceneManager {
     this.scene = new THREE.Scene();
     this.scene.fog = new THREE.FogExp2(0x05060f, 0.008);
 
+    // Ensure container has dimensions
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
+
     this.camera = new THREE.PerspectiveCamera(
       60,
-      container.clientWidth / container.clientHeight,
+      width / height,
       0.1,
       1000
     );
@@ -28,7 +32,7 @@ export class SceneManager {
       antialias: true,
       alpha: false,
     });
-    this.renderer.setSize(container.clientWidth, container.clientHeight);
+    this.renderer.setSize(width, height);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -39,9 +43,11 @@ export class SceneManager {
     this.clock = new THREE.Clock();
 
     window.addEventListener('resize', () => {
-      this.camera.aspect = container.clientWidth / container.clientHeight;
+      const newWidth = container.clientWidth || window.innerWidth;
+      const newHeight = container.clientHeight || window.innerHeight;
+      this.camera.aspect = newWidth / newHeight;
       this.camera.updateProjectionMatrix();
-      this.renderer.setSize(container.clientWidth, container.clientHeight);
+      this.renderer.setSize(newWidth, newHeight);
     });
   }
 

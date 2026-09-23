@@ -41,27 +41,45 @@ const App: React.FC = () => {
 
   // Инициализация 3D-сцены
   useEffect(() => {
-    if (!containerRef.current) return;
+    // Задержка для обеспечения того, что контейнер имеет размеры
+    const timer = setTimeout(() => {
+      if (!containerRef.current) {
+        console.error('Container ref is null');
+        return;
+      }
 
-    const data = resumeDataRaw as unknown as ResumeData;
-    setResumeData(data);
+      console.log('Container size:', containerRef.current.clientWidth, containerRef.current.clientHeight);
 
-    const sceneManager = new SceneManager(containerRef.current);
-    sceneManagerRef.current = sceneManager;
+      const data = resumeDataRaw as unknown as ResumeData;
+      setResumeData(data);
 
-    sceneManager.setupLighting();
-    sceneManager.createSkybox();
+      try {
+        const sceneManager = new SceneManager(containerRef.current);
+        sceneManagerRef.current = sceneManager;
 
-    const worldGen = new WorldGenerator(sceneManager.scene);
-    worldGenRef.current = worldGen;
-    worldGen.generate(data);
+        sceneManager.setupLighting();
+        sceneManager.createSkybox();
 
-    const director = new SceneDirector(sceneManager.camera, sceneManager.scene, data);
-    directorRef.current = director;
+        const worldGen = new WorldGenerator(sceneManager.scene);
+        worldGenRef.current = worldGen;
+        worldGen.generate(data);
 
-    sceneManager.start();
+        const director = new SceneDirector(sceneManager.camera, sceneManager.scene, data);
+        directorRef.current = director;
 
-    setTimeout(() => setPhase('roleSelect'), 1000);
+        sceneManager.start();
+        console.log('Scene initialized successfully');
+
+        setTimeout(() => {
+          console.log('Switching to roleSelect phase');
+          setPhase('roleSelect');
+        }, 500);
+      } catch (error) {
+        console.error('Error initializing scene:', error);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Выбор роли
@@ -136,20 +154,37 @@ const App: React.FC = () => {
     audio.setMuted(newMuted);
   };
 
-  if (!resumeData) return null;
-
   return (
-    <div className="w-screen h-screen overflow-hidden bg-gray-950 relative">
+    <div className="w-screen h-screen overflow-hidden bg-gray-950" style={{ minHeight: '100vh', position: 'relative' }}>
       {/* 3D Canvas */}
-      <div ref={containerRef} className="w-full h-full" />
+      <div ref={containerRef} className="w-full h-full absolute inset-0" style={{ zIndex: 1, position: 'relative' }} />
+
+      {/* Loading Screen */}
+      {phase === 'loading' && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/90 z-50">
+          <div className="text-center">
+            <div className="text-4xl font-bold text-cyan-400 mb-4 animate-pulse">CareerForge</div>
+            <div className="text-gray-400">Загрузка...</div>
+            <div className="text-gray-600 text-sm mt-2">Инициализация 3D-сцены</div>
+          </div>
+        </div>
+      )}
 
       {/* UI Overlays */}
-      {phase === 'roleSelect' && <RoleSelector roles={resumeData.roles} onSelect={handleRoleSelect} />}
+      {phase === 'roleSelect' && resumeData && (
+        <div style={{ zIndex: 100 }}>
+          <RoleSelector roles={resumeData.roles} onSelect={handleRoleSelect} />
+        </div>
+      )}
       
-      {phase === 'tutorial' && <Tutorial onComplete={handleTutorialComplete} />}
+      {phase === 'tutorial' && (
+        <div style={{ zIndex: 100 }}>
+          <Tutorial onComplete={handleTutorialComplete} />
+        </div>
+      )}
 
-      {phase === 'playing' && gameState.currentScene && (
-        <>
+      {phase === 'playing' && gameState.currentScene && resumeData && (
+        <div style={{ zIndex: 100 }}>
           <GameHUD
             gameState={gameState}
             resumeData={resumeData}
@@ -173,11 +208,13 @@ const App: React.FC = () => {
           {gameState.currentScene === 'rollout' && (
             <RolloutScene onComplete={(score: number, metrics: Record<string, unknown>) => handleSceneComplete('rollout', score, metrics)} />
           )}
-        </>
+        </div>
       )}
 
-      {phase === 'finale' && (
-        <FinaleScene gameState={gameState} resumeData={resumeData} />
+      {phase === 'finale' && resumeData && (
+        <div style={{ zIndex: 100 }}>
+          <FinaleScene gameState={gameState} resumeData={resumeData} />
+        </div>
       )}
     </div>
   );
