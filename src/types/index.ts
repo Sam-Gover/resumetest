@@ -20,6 +20,15 @@ export interface Basics {
     region?: string;
     country?: string;
   };
+  age?: number;
+  experience?: string;
+  education?: {
+    institution: string;
+    faculty?: string;
+    specialty?: string;
+    year?: number;
+    status?: string;
+  };
 }
 
 export interface WorkExperience {

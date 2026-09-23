@@ -67,9 +67,14 @@ export const HUD: React.FC<HUDProps> = ({
     <div className="fixed inset-0 pointer-events-none z-50">
       {/* Top bar - Player info */}
       <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-start pointer-events-none">
-        <div className="bg-black/60 backdrop-blur-sm rounded-lg p-3 border border-cyan-500/30">
+        <div className="bg-black/60 backdrop-blur-sm rounded-lg p-3 border border-cyan-500/30 max-w-xs">
           <h2 className="text-cyan-400 font-bold text-sm">{resumeData.basics.name}</h2>
           <p className="text-gray-400 text-xs">{resumeData.basics.label}</p>
+          {resumeData.basics.experience && (
+            <p className="text-gray-500 text-xs mt-1">
+              Опыт: {resumeData.basics.experience} • {resumeData.basics.location?.city}
+            </p>
+          )}
           <div className="mt-1 text-xs text-gray-500">
             Состояние: <span className="text-green-400">{gameState}</span>
           </div>
