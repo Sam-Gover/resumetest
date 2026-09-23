@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import type { ResumeData } from '../types';
 
 /**
- * Scene Manager — управляет Three.js сценой, рендерером, камерой
+ * SceneManager — управляет Three.js сценой (рельсовая архитектура v1.0)
  */
 export class SceneManager {
   scene: THREE.Scene;
@@ -12,21 +12,18 @@ export class SceneManager {
   private animationCallbacks: Array<(delta: number, elapsed: number) => void> = [];
 
   constructor(container: HTMLElement) {
-    // Scene
     this.scene = new THREE.Scene();
-    this.scene.fog = new THREE.FogExp2(0x0a0a2e, 0.008);
+    this.scene.fog = new THREE.FogExp2(0x05060f, 0.008);
 
-    // Camera
     this.camera = new THREE.PerspectiveCamera(
       60,
       container.clientWidth / container.clientHeight,
       0.1,
       1000
     );
-    this.camera.position.set(0, 25, 40);
-    this.camera.lookAt(0, 0, 0);
+    this.camera.position.set(0, 30, 50);
+    this.camera.lookAt(0, 0, -10);
 
-    // Renderer
     this.renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: false,
@@ -39,10 +36,8 @@ export class SceneManager {
     this.renderer.toneMappingExposure = 1.2;
     container.appendChild(this.renderer.domElement);
 
-    // Clock
     this.clock = new THREE.Clock();
 
-    // Resize handler
     window.addEventListener('resize', () => {
       this.camera.aspect = container.clientWidth / container.clientHeight;
       this.camera.updateProjectionMatrix();
@@ -50,16 +45,11 @@ export class SceneManager {
     });
   }
 
-  setupLighting(data: ResumeData) {
-    const ambientIntensity = data.worldConfig.ambientLight || 0.3;
-    const dirIntensity = data.worldConfig.directionalLight || 0.8;
-
-    // Ambient light
-    const ambient = new THREE.AmbientLight(0x404080, ambientIntensity);
+  setupLighting() {
+    const ambient = new THREE.AmbientLight(0x404080, 0.3);
     this.scene.add(ambient);
 
-    // Directional light (sun)
-    const dirLight = new THREE.DirectionalLight(0xffffff, dirIntensity);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
     dirLight.position.set(50, 80, 30);
     dirLight.castShadow = true;
     dirLight.shadow.mapSize.width = 2048;
@@ -72,22 +62,20 @@ export class SceneManager {
     dirLight.shadow.camera.bottom = -60;
     this.scene.add(dirLight);
 
-    // Point lights for atmosphere
-    const pointLight1 = new THREE.PointLight(0x00aaff, 2, 50);
-    pointLight1.position.set(-20, 10, -15);
-    this.scene.add(pointLight1);
+    // Rim lights (синий и фиолетовый)
+    const blueLight = new THREE.PointLight(0x3b82f6, 2, 80);
+    blueLight.position.set(-30, 15, 0);
+    this.scene.add(blueLight);
 
-    const pointLight2 = new THREE.PointLight(0xff8800, 2, 50);
-    pointLight2.position.set(20, 10, 15);
-    this.scene.add(pointLight2);
+    const purpleLight = new THREE.PointLight(0xa855f7, 2, 80);
+    purpleLight.position.set(30, 15, 0);
+    this.scene.add(purpleLight);
 
-    // Hemisphere light
     const hemiLight = new THREE.HemisphereLight(0x0044aa, 0x002244, 0.5);
     this.scene.add(hemiLight);
   }
 
   createSkybox() {
-    // Starfield
     const starGeometry = new THREE.BufferGeometry();
     const starCount = 2000;
     const positions = new Float32Array(starCount * 3);
@@ -123,7 +111,6 @@ export class SceneManager {
       const delta = this.clock.getDelta();
       const elapsed = this.clock.getElapsedTime();
 
-      // Run all animation callbacks
       this.animationCallbacks.forEach(cb => cb(delta, elapsed));
 
       this.renderer.render(this.scene, this.camera);

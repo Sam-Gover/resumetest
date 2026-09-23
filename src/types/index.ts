@@ -1,136 +1,92 @@
-// Типы для данных резюме и игрового мира
+// Типы для данных резюме и игрового мира (v1.0 — рельсовая архитектура)
 export interface ResumeData {
   basics: Basics;
+  roles: Record<string, Role>;
   work: WorkExperience[];
-  skills: Skill[];
-  abilities: Ability[];
-  worldConfig: WorldConfig;
+  scenes: Record<string, SceneConfig>;
+  achievements: Achievement[];
 }
 
 export interface Basics {
   name: string;
   label: string;
-  image?: string;
-  email?: string;
-  phone?: string;
-  url?: string;
   summary: string;
+  totals: {
+    documents: number;
+    projects: number;
+    budget: number;
+    users: number;
+    regions: number;
+    experience: string;
+  };
+  contacts: {
+    phone?: string;
+    telegram?: string;
+    hh?: string;
+    email?: string;
+    pdf?: string;
+  };
   location?: {
     city?: string;
-    region?: string;
     country?: string;
   };
-  age?: number;
-  experience?: string;
-  education?: {
-    institution: string;
-    faculty?: string;
-    specialty?: string;
-    year?: number;
-    status?: string;
-  };
+}
+
+export interface Role {
+  id: string;
+  label: string;
+  description: string;
+  sceneOrder: string[];
+  focusMetrics: string[];
 }
 
 export interface WorkExperience {
   id: string;
   name: string;
   position: string;
-  url?: string;
   startDate?: string;
   endDate?: string;
   summary: string;
-  highlights?: string[];
-  metrics?: Record<string, string | number>;
-  worldPosition: Vector3;
-  buildingTheme: string;
-  buildingScale?: Vector3;
-  scenario?: Scenario;
+  metrics?: Record<string, number | string>;
+  game: {
+    position: [number, number, number];
+    theme: string;
+    size: number;
+    model: string;
+    scenes?: string[];
+  };
 }
 
-export interface Scenario {
+export interface SceneConfig {
+  id: string;
   title: string;
-  description: string;
-  abilities: string[];
-  steps: ScenarioStep[];
-}
-
-export interface ScenarioStep {
-  id: string;
-  text: string;
-  type: 'collect' | 'connect' | 'analyze' | 'launch';
-}
-
-export interface Skill {
-  id: string;
-  name: string;
-  level: number;
-  category: string;
-  abilityMapping?: string;
-}
-
-export interface Ability {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  hotkey: string;
-  cooldown: number;
+  building: string;
   duration: number;
-  color: string;
+  maxScore: number;
+  description: string;
+  metrics?: {
+    label: string;
+    value?: string;
+    formula?: string;
+    unit?: string;
+  };
 }
 
-export interface WorldConfig {
-  hubPosition: Vector3;
-  groundSize: number;
-  skyColor?: string;
-  ambientLight?: number;
-  directionalLight?: number;
-  districts: District[];
-}
-
-export interface District {
+export interface Achievement {
   id: string;
+  icon: string;
   name: string;
-  description?: string;
-  center: Vector3;
-  color?: string;
+  condition: string;
 }
 
-export interface Vector3 {
-  x: number;
-  y: number;
-  z: number;
-}
-
-// Диалоги
-export interface DialogueData {
-  npcs: NPC[];
-}
-
-export interface NPC {
-  id: string;
-  name: string;
-  avatar: string;
-  location: string;
-  dialogueTree: Record<string, DialogueNode>;
-}
-
-export interface DialogueNode {
-  text: string;
-  choices: DialogueChoice[];
-}
-
-export interface DialogueChoice {
-  text: string;
-  next: string;
-}
-
-// Игровое состояние
 export interface GameState {
-  currentDistrict: string | null;
-  currentBuilding: string | null;
-  activeAbility: string | null;
-  completedScenarios: string[];
-  unlockedAbilities: string[];
-  metrics: Record<string, number>;
+  currentScene: string | null;
+  sceneIndex: number;
+  totalScenes: number;
+  score: number;
+  sceneScores: Record<string, number>;
+  achievements: string[];
+  startTime: number;
+  endTime: number | null;
+  role: string | null;
 }

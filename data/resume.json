@@ -2,353 +2,238 @@
   "$schema": "./schemas/resume_schema.json",
   "basics": {
     "name": "Мусаев Самед Мамедович",
-    "label": "Бизнес-системный аналитик / Implementation Consultant",
-    "image": "",
-    "email": "",
-    "phone": "+7 (993) 6969508",
-    "url": "",
-    "summary": "Бизнес-системный аналитик с опытом анализа и автоматизации процессов, сбора и формализации требований, внедрения корпоративных IT-систем и сопровождения разработки цифровых продуктов. За карьеру подготовил более 1 300 документов. Управлял портфелем до 9 федеральных проектов и бюджетами до 16 млн рублей.",
+    "label": "Бизнес-системный аналитик",
+    "summary": "Не читай резюме — пройди его. 5 интерактивных сцен, 12-15 минут, реальные кейсы.",
+    "totals": {
+      "documents": 1300,
+      "projects": 9,
+      "budget": 16,
+      "users": 9,
+      "regions": 89,
+      "experience": "2 года 7 месяцев"
+    },
+    "contacts": {
+      "phone": "+7 (993) 6969508",
+      "telegram": "https://t.me/samed_musaev",
+      "hh": "https://hh.ru/resume/example",
+      "email": "musaev.samed@example.com",
+      "pdf": "/resume.pdf"
+    },
     "location": {
       "city": "Москва",
-      "region": "",
       "country": "Россия"
+    }
+  },
+  "roles": {
+    "hr": {
+      "id": "hr",
+      "label": "HR, ищущий аналитика",
+      "description": "Увидите метрики и результаты",
+      "sceneOrder": ["antifraud", "mvp", "integration", "portfolio", "rollout"],
+      "focusMetrics": ["documents", "users", "regions"]
     },
-    "age": 23,
-    "experience": "2 года 7 месяцев",
-    "education": {
-      "institution": "Финансовый университет при Правительстве Российской Федерации",
-      "faculty": "Информационных технологий и анализа больших данных",
-      "specialty": "Прикладная информатика в экономике и финансах (09.03.03)",
-      "year": 2028,
-      "status": "Неоконченное высшее"
+    "cto": {
+      "id": "cto",
+      "label": "CTO, ищущий Product Owner",
+      "description": "Сразу покажем тех-стек",
+      "sceneOrder": ["mvp", "integration", "antifraud", "portfolio", "rollout"],
+      "focusMetrics": ["projects", "budget"]
+    },
+    "curious": {
+      "id": "curious",
+      "label": "Просто прохожу мимо",
+      "description": "Начнём с самого наглядного",
+      "sceneOrder": ["portfolio", "antifraud", "mvp", "integration", "rollout"],
+      "focusMetrics": ["documents", "projects"]
     }
   },
   "work": [
     {
-      "id": "voksis-dobro",
-      "name": "АНО «ВОКСИС.ДОБРО»",
-      "position": "Исполнительный директор (CEO) / Product Owner",
-      "url": "",
-      "startDate": "2026-02-01",
-      "endDate": "2026-08-01",
-      "summary": "Функции Product Owner / системного аналитика цифрового продукта. За 2 месяца самостоятельно спроектировал и реализовал MVP web-платформы на React/PHP. Настроил многоагентный AI-контур анализа документов, сократив время подготовки материалов на 75%.",
-      "highlights": [
-        "MVP за 2 месяца (React/PHP)",
-        "3 пользовательские роли",
-        "~20 пользовательских сценариев",
-        "80+ функциональных требований",
-        "Backlog: 80 задач (50 реализовано)",
-        "14 основных страниц продукта",
-        "API-интеграция с Совкомбанком",
-        "AI-контур: −75% времени на документы"
-      ],
+      "id": "dobro-rf",
+      "name": "Ассоциация Добро.рф",
+      "position": "Координатор региональных представителей",
+      "startDate": "2025-05-01",
+      "endDate": "2026-02-01",
+      "summary": "89 регионов, 9 млн пользователей, антифрод-система, Bitrix24 для 190 пользователей",
       "metrics": {
-        "timeToMVP": "2 месяца",
-        "userRoles": 3,
-        "scenarios": 20,
-        "requirements": 80,
-        "backlogTasks": 80,
-        "implemented": 50,
-        "pages": 14,
-        "aiTimeSaving": "75%"
+        "regions": 89,
+        "users": 9000000,
+        "organizations": 2500,
+        "fraudReduction": 40,
+        "bitrixUsers": 190,
+        "processSpeedUp": 30
       },
-      "worldPosition": { "x": -20, "y": 0, "z": -15 },
-      "buildingTheme": "blue",
-      "buildingScale": { "x": 6, "y": 9, "z": 6 },
-      "scenario": {
-        "title": "Запуск MVP платформы",
-        "description": "Спроектируйте и реализуйте MVP web-платформы за 2 месяца: 3 роли, 20 сценариев, 80 требований, API-интеграция с банком.",
-        "abilities": ["requirement_scanner", "api_portal", "ai_assistant"],
-        "steps": [
-          { "id": "roles", "text": "Проработайте 3 пользовательские роли и 20 сценариев", "type": "collect" },
-          { "id": "backlog", "text": "Сформируйте backlog из 80 задач", "type": "collect" },
-          { "id": "api", "text": "Настройте API-интеграцию с Совкомбанком", "type": "connect" },
-          { "id": "ai", "text": "Настройте многоагентный AI-контур анализа", "type": "analyze" },
-          { "id": "launch", "text": "Запустите MVP платформы", "type": "launch" }
-        ]
+      "game": {
+        "position": [20, 0, -15],
+        "theme": "social",
+        "size": 9,
+        "model": "dome",
+        "scenes": ["antifraud", "rollout"]
       }
     },
     {
-      "id": "dobro-rf",
-      "name": "Ассоциация Добро.рф",
-      "position": "Координатор по сопровождению региональных представителей",
-      "url": "",
-      "startDate": "2025-05-01",
-      "endDate": "2026-02-01",
-      "summary": "Работа на стыке пользователей федеральной цифровой платформы (9 млн человек) и IT-команды. Координация сети в 89 субъектах РФ, верификация 2500+ организаций, антифрод-механика, внедрение Bitrix24 для 190 пользователей, автоматизация документооборота.",
-      "highlights": [
-        "89 субъектов РФ",
-        "Рост базы: 7 → 9 млн пользователей",
-        "2 500+ верифицированных организаций",
-        "Антифрод: −40% заявок за 2 месяца",
-        "Bitrix24: 190 пользователей, 89 регионов",
-        "Автоматизация: +30% скорости процессов",
-        "Word-генератор из Excel: −60% времени",
-        "15 вебинаров, аудитория до 160 чел.",
-        "Массивы данных до 50 000 записей"
-      ],
+      "id": "voksis-dobro",
+      "name": "АНО «ВОКСИС.ДОБРО»",
+      "position": "Исполнительный директор (CEO)",
+      "startDate": "2026-02-01",
+      "endDate": "2026-08-01",
+      "summary": "MVP за 2 месяца, React/PHP, API-интеграция с Совкомбанком, AI-контур",
       "metrics": {
-        "regions": 89,
-        "usersGrowth": "7M → 9M",
-        "organizations": 2500,
-        "orgsPerMonth": 270,
-        "fraudReduction": "40%",
-        "implementationTime": "2 месяца",
-        "defects": 30,
-        "improvementRequirements": 10,
-        "bitrixUsers": 190,
-        "automationTZ": 10,
-        "processSpeedUp": "30%",
-        "docTimeSaving": "60%",
-        "dataRecords": 50000,
-        "webinars": 15,
-        "audienceSize": 160
+        "timeToMVP": "2 месяца",
+        "requirements": 80,
+        "scenarios": 20,
+        "aiTimeSaving": 75
       },
-      "worldPosition": { "x": 20, "y": 0, "z": -15 },
-      "buildingTheme": "green",
-      "buildingScale": { "x": 9, "y": 12, "z": 9 },
-      "scenario": {
-        "title": "Антифрод-система и автоматизация",
-        "description": "Соберите обратную связь из 60 регионов, подготовьте ТЗ на антифрод, внедрите Bitrix24 и автоматизируйте документооборот.",
-        "abilities": ["requirement_scanner", "system_installer", "automation", "debug_mode"],
-        "steps": [
-          { "id": "collect", "text": "Соберите обратную связь из 60 регионов", "type": "collect" },
-          { "id": "antifraud", "text": "Подготовьте ТЗ на антифрод-механику", "type": "analyze" },
-          { "id": "bitrix", "text": "Внедрите Bitrix24 для 190 пользователей", "type": "connect" },
-          { "id": "automation", "text": "Автоматизируйте документооборот (−60% времени)", "type": "launch" },
-          { "id": "deploy", "text": "Внедрите решение в production за 2 месяца", "type": "launch" }
-        ]
+      "game": {
+        "position": [-20, 0, -15],
+        "theme": "tech",
+        "size": 6,
+        "model": "tower",
+        "scenes": ["mvp", "integration"]
       }
     },
     {
       "id": "rssm",
       "name": "Российский союз сельской молодёжи",
       "position": "Проектный менеджер",
-      "url": "",
       "startDate": "2024-06-01",
       "endDate": "2025-02-01",
-      "summary": "Управление портфелем из 9 федеральных проектов и координация 70 региональных команд. Обеспечил обработку 28 000+ заявок (рост 200% год к году). Бюджет 16 млн рублей, экономия 3 млн рублей.",
-      "highlights": [
-        "9 федеральных проектов",
-        "70 региональных команд",
-        "28 000+ заявок (+200% год к году)",
-        "Бюджет 16 млн рублей",
-        "Экономия 3 млн рублей",
-        "20+ анкет и форм для 5000+ пользователей",
-        "6 технических заданий",
-        "400+ региональных отчетов",
-        "30+ KPI под контролем"
-      ],
+      "summary": "9 федеральных проектов, 70 команд, бюджет 16 млн ₽, экономия 3 млн ₽",
       "metrics": {
         "projects": 9,
         "teams": 70,
         "requests": 28000,
-        "requestGrowth": "200%",
-        "budget": "16 млн ₽",
-        "savings": "3 млн ₽",
-        "forms": 20,
-        "formUsers": 5000,
-        "technicalTasks": 6,
-        "regionalReports": 400,
-        "kpis": 30
+        "budget": 16,
+        "savings": 3
       },
-      "worldPosition": { "x": 0, "y": 0, "z": -30 },
-      "buildingTheme": "purple",
-      "buildingScale": { "x": 10, "y": 14, "z": 10 },
-      "scenario": {
-        "title": "Управление портфелем проектов",
-        "description": "Координируйте 9 федеральных проектов, распределите ресурсы 70 команд и оптимизируйте бюджет 16 млн рублей.",
-        "abilities": ["project_launcher", "ai_assistant", "automation"],
-        "steps": [
-          { "id": "plan", "text": "Распределите ресурсы между 9 проектами и 70 командами", "type": "collect" },
-          { "id": "forms", "text": "Спроектируйте 20+ анкет для 5000+ пользователей", "type": "analyze" },
-          { "id": "reports", "text": "Соберите и обработайте 400+ региональных отчетов", "type": "analyze" },
-          { "id": "optimize", "text": "Оптимизируйте бюджет и обеспечьте экономию 3 млн ₽", "type": "launch" }
-        ]
+      "game": {
+        "position": [0, 0, -30],
+        "theme": "strategy",
+        "size": 10,
+        "model": "nine_windows",
+        "scenes": ["portfolio"]
       }
     },
     {
       "id": "psb",
       "name": "Банк ПСБ",
       "position": "Стажёр-тестировщик / Системный аналитик",
-      "url": "https://job.psbank.ru",
       "startDate": "2021-12-01",
       "endDate": "2022-05-01",
-      "summary": "Коммерческий опыт в Scrum-команде разработки системы ЭДО для бизнеса. 12 спринтов, 7 релизов, SRS/BRD, UML, REST API, функциональное и регрессионное тестирование.",
-      "highlights": [
-        "12 двухнедельных Scrum-спринтов",
-        "7 релизов",
-        "2 SRS и 2 BRD",
-        "UML Sequence Diagram",
-        "REST API, HTTP, Postman, Swagger",
-        "~30 задач разработки",
-        "~25 выявленных дефектов",
-        "Jira, Confluence, TestRail, Draw.io",
-        "CI/CD, логи, frontend/backend"
-      ],
+      "summary": "12 Scrum-спринтов, 7 релизов, SRS/BRD, REST API, тестирование",
       "metrics": {
         "sprints": 12,
         "releases": 7,
-        "srs": 2,
-        "brd": 2,
-        "devTasks": 30,
-        "defects": 25,
-        "sprintDuration": "2 недели"
+        "defects": 25
       },
-      "worldPosition": { "x": -20, "y": 0, "z": 15 },
-      "buildingTheme": "orange",
-      "buildingScale": { "x": 5, "y": 7, "z": 5 },
-      "scenario": {
-        "title": "Scrum-цикл: ЭДО для бизнеса",
-        "description": "Пройдите полный цикл: от сбора требований и SRS до приёмочного тестирования и 7 релизов.",
-        "abilities": ["debug_mode", "requirement_scanner", "api_portal"],
-        "steps": [
-          { "id": "srs", "text": "Подготовьте SRS и BRD, создайте UML Sequence Diagram", "type": "collect" },
-          { "id": "api", "text": "Спроектируйте REST API и протестируйте через Postman/Swagger", "type": "connect" },
-          { "id": "test", "text": "Проведите функциональное и регрессионное тестирование", "type": "analyze" },
-          { "id": "fix", "text": "Выявите и сопроводите исправление 25 дефектов", "type": "analyze" },
-          { "id": "release", "text": "Выпустите 7 релизов за 12 спринтов", "type": "launch" }
-        ]
+      "game": {
+        "position": [-20, 0, 15],
+        "theme": "bank",
+        "size": 5,
+        "model": "classic",
+        "scenes": []
       }
     }
   ],
-  "skills": [
-    { "id": "system_analysis", "name": "Системный анализ", "level": 90, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "business_analysis", "name": "Бизнес-анализ", "level": 90, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "requirements_gathering", "name": "Сбор требований", "level": 95, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "requirements_analysis", "name": "Анализ требований", "level": 90, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "requirements_formalization", "name": "Формализация требований", "level": 90, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "requirements_management", "name": "Управление требованиями", "level": 85, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "functional_requirements", "name": "Функциональные требования", "level": 90, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "business_process_analysis", "name": "Анализ бизнес-процессов", "level": 85, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "srs_brd_uml", "name": "SRS / BRD / UML", "level": 85, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "tech_spec", "name": "Техническое задание", "level": 95, "category": "analysis", "abilityMapping": "requirement_scanner" },
-    { "id": "rest_api", "name": "REST API / HTTP", "level": 80, "category": "technical", "abilityMapping": "api_portal" },
-    { "id": "integrations", "name": "Интеграции", "level": 80, "category": "technical", "abilityMapping": "api_portal" },
-    { "id": "swagger", "name": "Swagger / API-спецификации", "level": 80, "category": "technical", "abilityMapping": "api_portal" },
-    { "id": "postman", "name": "Postman / Тестирование API", "level": 80, "category": "technical", "abilityMapping": "api_portal" },
-    { "id": "log_analysis", "name": "Анализ логов", "level": 75, "category": "technical", "abilityMapping": "debug_mode" },
-    { "id": "ci_cd", "name": "CI/CD", "level": 70, "category": "technical", "abilityMapping": "debug_mode" },
-    { "id": "generative_ai", "name": "Generative AI", "level": 85, "category": "ai", "abilityMapping": "ai_assistant" },
-    { "id": "ai_assisted", "name": "AI-assisted development", "level": 85, "category": "ai", "abilityMapping": "ai_assistant" },
-    { "id": "agentic_ai", "name": "Agentic AI", "level": 80, "category": "ai", "abilityMapping": "ai_assistant" },
-    { "id": "project_management", "name": "Agile Project Management", "level": 90, "category": "management", "abilityMapping": "project_launcher" },
-    { "id": "scrum", "name": "Scrum / SDLC", "level": 85, "category": "management", "abilityMapping": "project_launcher" },
-    { "id": "stakeholder", "name": "Stakeholder Management", "level": 85, "category": "management", "abilityMapping": "project_launcher" },
-    { "id": "change_management", "name": "Управление изменениями", "level": 80, "category": "management", "abilityMapping": "project_launcher" },
-    { "id": "uat", "name": "Приёмочное тестирование (UAT)", "level": 85, "category": "quality", "abilityMapping": "debug_mode" },
-    { "id": "functional_testing", "name": "Функциональное тестирование", "level": 85, "category": "quality", "abilityMapping": "debug_mode" },
-    { "id": "bitrix24", "name": "Bitrix24 / CRM", "level": 80, "category": "systems", "abilityMapping": "system_installer" },
-    { "id": "edo", "name": "ЭДО", "level": 80, "category": "systems", "abilityMapping": "system_installer" },
-    { "id": "implementation", "name": "Внедрение информационных систем", "level": 85, "category": "systems", "abilityMapping": "system_installer" },
-    { "id": "automation", "name": "Автоматизация бизнес-процессов", "level": 85, "category": "systems", "abilityMapping": "automation" },
-    { "id": "doc_automation", "name": "Автоматизация документооборота", "level": 85, "category": "systems", "abilityMapping": "automation" },
-    { "id": "jira", "name": "Atlassian Jira", "level": 90, "category": "tools", "abilityMapping": "project_launcher" },
-    { "id": "confluence", "name": "Atlassian Confluence", "level": 90, "category": "tools", "abilityMapping": "project_launcher" },
-    { "id": "excel", "name": "MS Excel / Power Query / Макросы", "level": 85, "category": "tools", "abilityMapping": "automation" },
-    { "id": "user_training", "name": "Обучение пользователей / User Onboarding", "level": 80, "category": "soft", "abilityMapping": "project_launcher" },
-    { "id": "user_support", "name": "Сопровождение пользователей", "level": 85, "category": "soft", "abilityMapping": "requirement_scanner" }
-  ],
-  "abilities": [
+  "scenes": {
+    "antifraud": {
+      "id": "antifraud",
+      "title": "Антифрод-система",
+      "building": "dobro-rf",
+      "duration": 180,
+      "maxScore": 200,
+      "description": "Отсортируйте заявки: отклоните фрод, примите корректные",
+      "metrics": {
+        "label": "Поток низкокачественных заявок",
+        "formula": "20 + 20 × (правильные / всего)",
+        "unit": "%"
+      }
+    },
+    "mvp": {
+      "id": "mvp",
+      "title": "MVP за 2 месяца",
+      "building": "voksis-dobro",
+      "duration": 180,
+      "maxScore": 200,
+      "description": "Пройдите квиз по запуску MVP платформы",
+      "metrics": {
+        "label": "MVP запущен",
+        "value": "2 месяца · 20 сценариев · 80 требований · API с банком"
+      }
+    },
+    "integration": {
+      "id": "integration",
+      "title": "API-интеграция",
+      "building": "voksis-dobro",
+      "duration": 120,
+      "maxScore": 200,
+      "description": "Постройте цепочку REST API запроса",
+      "metrics": {
+        "label": "API-интеграция с Совкомбанком",
+        "value": "настроена"
+      }
+    },
+    "portfolio": {
+      "id": "portfolio",
+      "title": "Портфель 9 проектов",
+      "building": "rssm",
+      "duration": 180,
+      "maxScore": 200,
+      "description": "Распределите 9 проектов по 3 командам",
+      "metrics": {
+        "label": "Портфель проектов",
+        "value": "9 проектов · 16 млн ₽ · экономия ~X млн ₽"
+      }
+    },
+    "rollout": {
+      "id": "rollout",
+      "title": "Bitrix24 для 190 пользователей",
+      "building": "dobro-rf",
+      "duration": 90,
+      "maxScore": 200,
+      "description": "Обучите 10 регионов за 45 секунд",
+      "metrics": {
+        "label": "Bitrix24 внедрён",
+        "value": "190 пользователей · +X% скорость процессов"
+      }
+    }
+  },
+  "achievements": [
     {
-      "id": "requirement_scanner",
-      "name": "Сканер требований",
-      "description": "Подсвечивает скрытые объекты, подсказки и «боли пользователей». Позволяет выявить проблемы в сцене — как сбор требований из 60 регионов.",
-      "icon": "🔍",
-      "hotkey": "1",
-      "cooldown": 5,
-      "duration": 10,
-      "color": "#00ff88"
+      "id": "perfect",
+      "icon": "🏆",
+      "name": "Идеальное прохождение",
+      "condition": "score >= 900"
     },
     {
-      "id": "ai_assistant",
-      "name": "AI-Ассистент",
-      "description": "Дрон-агент, который автоматически собирает данные, анализирует логи, находит дефекты. Многоагентный контур сокращает время на 75%.",
-      "icon": "🤖",
-      "hotkey": "2",
-      "cooldown": 15,
-      "duration": 20,
-      "color": "#00aaff"
+      "id": "senior",
+      "icon": "⭐",
+      "name": "Senior Analyst",
+      "condition": "score >= 700"
     },
     {
-      "id": "api_portal",
-      "name": "API-Портал",
-      "description": "Создаёт две связанные точки телепортации. Демонстрирует REST API-интеграцию — как с Совкомбанком.",
-      "icon": "🌐",
-      "hotkey": "3",
-      "cooldown": 10,
-      "duration": 15,
-      "color": "#ff8800"
+      "id": "speedrun",
+      "icon": "⚡",
+      "name": "Спидран",
+      "condition": "time < 480"
     },
     {
-      "id": "system_installer",
-      "name": "Системный инсталлятор",
-      "description": "Размещает модули (Bitrix24, CRM, ЭДО) и соединяет их каналами. Внедрение для 190 пользователей в 89 регионах.",
-      "icon": "⚙️",
-      "hotkey": "4",
-      "cooldown": 8,
-      "duration": 12,
-      "color": "#aa00ff"
+      "id": "antifraud_master",
+      "icon": "🛡️",
+      "name": "Антифрод-мастер",
+      "condition": "antifraud.accuracy >= 0.9"
     },
     {
-      "id": "project_launcher",
-      "name": "Запуск фазы проекта",
-      "description": "Спавнит NPC-разработчиков для координации 9 проектов и 70 команд. Управление портфелем и бюджетом.",
+      "id": "api_guru",
+      "icon": "🔌",
+      "name": "API-гуру",
+      "condition": "integration.errors === 0"
+    },
+    {
+      "id": "implementer",
       "icon": "🚀",
-      "hotkey": "5",
-      "cooldown": 20,
-      "duration": 25,
-      "color": "#ff0066"
-    },
-    {
-      "id": "debug_mode",
-      "name": "Режим отладки",
-      "description": "Подсвечивает дефекты, показывает логи. Приёмочное и функциональное тестирование — как 25 дефектов в ПСБ.",
-      "icon": "🐛",
-      "hotkey": "6",
-      "cooldown": 5,
-      "duration": 10,
-      "color": "#ff3333"
-    },
-    {
-      "id": "automation",
-      "name": "Автоматизация документооборота",
-      "description": "Массовая конвертация данных в документы. Сокращение времени на 60-75%. Excel → Word генератор.",
-      "icon": "📄",
-      "hotkey": "7",
-      "cooldown": 12,
-      "duration": 8,
-      "color": "#44ff44"
+      "name": "Внедренец",
+      "condition": "rollout.regions === 10"
     }
-  ],
-  "worldConfig": {
-    "hubPosition": { "x": 0, "y": 0, "z": 0 },
-    "groundSize": 200,
-    "skyColor": "#0a0a2e",
-    "ambientLight": 0.3,
-    "directionalLight": 0.8,
-    "districts": [
-      {
-        "id": "projects",
-        "name": "Квартал проектов",
-        "description": "Здания-проекты карьеры: от стажировки в ПСБ до CEO в ВОКСИС.ДОБРО",
-        "center": { "x": 0, "y": 0, "z": -20 },
-        "color": "#1a1a4e"
-      },
-      {
-        "id": "tech",
-        "name": "Квартал технологий",
-        "description": "REST API, AI-автоматизация, тестирование, CI/CD",
-        "center": { "x": 25, "y": 0, "z": 10 },
-        "color": "#0a2a4e"
-      },
-      {
-        "id": "strategy",
-        "name": "Квартал стратегии",
-        "description": "Управление 9 проектами, 70 командами, бюджетом 16 млн ₽",
-        "center": { "x": -25, "y": 0, "z": 10 },
-        "color": "#2a0a4e"
-      }
-    ]
-  }
+  ]
 }
