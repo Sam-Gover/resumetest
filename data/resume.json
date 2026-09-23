@@ -1,5 +1,4 @@
 {
-  "$schema": "./schemas/resume_schema.json",
   "basics": {
     "name": "Мусаев Самед Мамедович",
     "label": "Бизнес-системный аналитик",
