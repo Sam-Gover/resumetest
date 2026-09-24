@@ -1,0 +1,143 @@
+# 04 — Design Diagrams (Mermaid)
+
+## Диаграмма состояний игры (XState)
+
+```mermaid
+stateDiagram-v2
+    [*] --> loading
+    loading --> hub : DATA_LOADED
+    loading --> error : LOAD_ERROR
+    
+    error --> loading : RETRY
+    
+    hub --> exploring : TELEPORT_TO_BUILDING
+    hub --> usingAbility : ACTIVATE_ABILITY
+    hub --> dialogue : OPEN_DIALOGUE
+    
+    exploring --> inScenario : ENTER_BUILDING
+    exploring --> hub : RETURN_TO_HUB
+    exploring --> usingAbility : ACTIVATE_ABILITY
+    
+    usingAbility --> hub : DEACTIVATE_ABILITY
+    usingAbility --> hub : timeout(10s)
+    
+    inScenario --> hub : COMPLETE_SCENARIO
+    inScenario --> hub : EXIT_SCENARIO
+    inScenario --> inScenario : COMPLETE_STEP
+    
+    dialogue --> hub : CLOSE_DIALOGUE
+    dialogue --> dialogue : SELECT_CHOICE
+```
+
+## Диаграмма способностей
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    
+    Idle --> Activating : hotkey/click
+    Activating --> Active : effect_created
+    Active --> Active : animate(delta)
+    Active --> Cooldown : duration_expired
+    Cooldown --> Idle : cooldown_expired
+    
+    note right of Active
+        Визуальный эффект
+        отображается в 3D-сцене
+    end note
+    
+    note right of Cooldown
+        Кнопка затемнена
+        таймер обратного отсчёта
+    end note
+```
+
+## Диаграмма загрузки данных
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Load resume.json]
+    B --> C{Valid JSON?}
+    C -->|No| D[Show Error]
+    C -->|Yes| E[Validate Schema]
+    E --> F{Valid Schema?}
+    F -->|No| D
+    F -->|Yes| G[Generate World]
+    G --> H[Create Buildings from work[]]
+    H --> I[Create Abilities from abilities[]]
+    I --> J[Setup Skills from skills[]]
+    J --> K[Load Dialogues]
+    K --> L[Ready - Hub State]
+```
+
+## Диаграмма взаимодействия игрока
+
+```mermaid
+sequenceDiagram
+    participant P as Player
+    participant UI as HUD
+    participant SM as SceneManager
+    participant WG as WorldGenerator
+    participant AS as AbilitySystem
+    
+    P->>UI: Click on building
+    UI->>SM: Raycast
+    SM-->>UI: Hit result
+    UI->>UI: Show building info panel
+    P->>UI: "Start scenario"
+    UI->>UI: Show scenario steps
+    P->>UI: Press hotkey (1-7)
+    UI->>AS: activate(abilityId)
+    AS->>SM: Create 3D effect
+    AS-->>UI: Success + cooldown
+    P->>UI: Complete step
+    UI->>UI: Update progress
+    P->>UI: Complete scenario
+    UI->>UI: Show metrics
+```
+
+## Архитектурная диаграмма
+
+```mermaid
+graph TD
+    subgraph Data Layer
+        RJ[resume.json]
+        DJ[dialogues.json]
+        RS[resume_schema.json]
+    end
+    
+    subgraph Engine Layer
+        SM[SceneManager]
+        WG[WorldGenerator]
+        PC[PlayerController]
+        AS[AbilitySystem]
+    end
+    
+    subgraph State Layer
+        GM[GameMachine - XState]
+    end
+    
+    subgraph UI Layer
+        HUD[HUD Component]
+        INV[Inventory]
+        MAP[Minimap]
+        SCN[ScenarioPanel]
+    end
+    
+    RJ --> WG
+    RJ --> AS
+    RJ --> HUD
+    DJ --> HUD
+    RS --> RJ
+    
+    SM --> WG
+    SM --> PC
+    SM --> AS
+    
+    GM --> HUD
+    HUD --> AS
+    HUD --> PC
+    
+    WG --> SM
+    AS --> SM
+```

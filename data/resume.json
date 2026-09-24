@@ -1,0 +1,238 @@
+{
+  "basics": {
+    "name": "Мусаев Самед Мамедович",
+    "label": "Бизнес-системный аналитик",
+    "summary": "Не читай резюме — пройди его. 5 интерактивных сцен, 12-15 минут, реальные кейсы.",
+    "totals": {
+      "documents": 1300,
+      "projects": 9,
+      "budget": 16,
+      "users": 9,
+      "regions": 89,
+      "experience": "2 года 7 месяцев"
+    },
+    "contacts": {
+      "phone": "+7 (993) 6969508",
+      "telegram": "https://t.me/samed_musaev",
+      "hh": "https://hh.ru/resume/example",
+      "email": "musaev.samed@example.com",
+      "pdf": "/resume.pdf"
+    },
+    "location": {
+      "city": "Москва",
+      "country": "Россия"
+    }
+  },
+  "roles": {
+    "hr": {
+      "id": "hr",
+      "label": "HR, ищущий аналитика",
+      "description": "Увидите метрики и результаты",
+      "sceneOrder": ["antifraud", "mvp", "integration", "portfolio", "rollout"],
+      "focusMetrics": ["documents", "users", "regions"]
+    },
+    "cto": {
+      "id": "cto",
+      "label": "CTO, ищущий Product Owner",
+      "description": "Сразу покажем тех-стек",
+      "sceneOrder": ["mvp", "integration", "antifraud", "portfolio", "rollout"],
+      "focusMetrics": ["projects", "budget"]
+    },
+    "curious": {
+      "id": "curious",
+      "label": "Просто прохожу мимо",
+      "description": "Начнём с самого наглядного",
+      "sceneOrder": ["portfolio", "antifraud", "mvp", "integration", "rollout"],
+      "focusMetrics": ["documents", "projects"]
+    }
+  },
+  "work": [
+    {
+      "id": "dobro-rf",
+      "name": "Ассоциация Добро.рф",
+      "position": "Координатор региональных представителей",
+      "startDate": "2025-05-01",
+      "endDate": "2026-02-01",
+      "summary": "89 регионов, 9 млн пользователей, антифрод-система, Bitrix24 для 190 пользователей",
+      "metrics": {
+        "regions": 89,
+        "users": 9000000,
+        "organizations": 2500,
+        "fraudReduction": 40,
+        "bitrixUsers": 190,
+        "processSpeedUp": 30
+      },
+      "game": {
+        "position": [20, 0, -15],
+        "theme": "social",
+        "size": 9,
+        "model": "dome",
+        "scenes": ["antifraud", "rollout"]
+      }
+    },
+    {
+      "id": "voksis-dobro",
+      "name": "АНО «ВОКСИС.ДОБРО»",
+      "position": "Исполнительный директор (CEO)",
+      "startDate": "2026-02-01",
+      "endDate": "2026-08-01",
+      "summary": "MVP за 2 месяца, React/PHP, API-интеграция с Совкомбанком, AI-контур",
+      "metrics": {
+        "timeToMVP": "2 месяца",
+        "requirements": 80,
+        "scenarios": 20,
+        "aiTimeSaving": 75
+      },
+      "game": {
+        "position": [-20, 0, -15],
+        "theme": "tech",
+        "size": 6,
+        "model": "tower",
+        "scenes": ["mvp", "integration"]
+      }
+    },
+    {
+      "id": "rssm",
+      "name": "Российский союз сельской молодёжи",
+      "position": "Проектный менеджер",
+      "startDate": "2024-06-01",
+      "endDate": "2025-02-01",
+      "summary": "9 федеральных проектов, 70 команд, бюджет 16 млн ₽, экономия 3 млн ₽",
+      "metrics": {
+        "projects": 9,
+        "teams": 70,
+        "requests": 28000,
+        "budget": 16,
+        "savings": 3
+      },
+      "game": {
+        "position": [0, 0, -30],
+        "theme": "strategy",
+        "size": 10,
+        "model": "nine_windows",
+        "scenes": ["portfolio"]
+      }
+    },
+    {
+      "id": "psb",
+      "name": "Банк ПСБ",
+      "position": "Стажёр-тестировщик / Системный аналитик",
+      "startDate": "2021-12-01",
+      "endDate": "2022-05-01",
+      "summary": "12 Scrum-спринтов, 7 релизов, SRS/BRD, REST API, тестирование",
+      "metrics": {
+        "sprints": 12,
+        "releases": 7,
+        "defects": 25
+      },
+      "game": {
+        "position": [-20, 0, 15],
+        "theme": "bank",
+        "size": 5,
+        "model": "classic",
+        "scenes": []
+      }
+    }
+  ],
+  "scenes": {
+    "antifraud": {
+      "id": "antifraud",
+      "title": "Антифрод-система",
+      "building": "dobro-rf",
+      "duration": 180,
+      "maxScore": 200,
+      "description": "Отсортируйте заявки: отклоните фрод, примите корректные",
+      "metrics": {
+        "label": "Поток низкокачественных заявок",
+        "formula": "20 + 20 × (правильные / всего)",
+        "unit": "%"
+      }
+    },
+    "mvp": {
+      "id": "mvp",
+      "title": "MVP за 2 месяца",
+      "building": "voksis-dobro",
+      "duration": 180,
+      "maxScore": 200,
+      "description": "Пройдите квиз по запуску MVP платформы",
+      "metrics": {
+        "label": "MVP запущен",
+        "value": "2 месяца · 20 сценариев · 80 требований · API с банком"
+      }
+    },
+    "integration": {
+      "id": "integration",
+      "title": "API-интеграция",
+      "building": "voksis-dobro",
+      "duration": 120,
+      "maxScore": 200,
+      "description": "Постройте цепочку REST API запроса",
+      "metrics": {
+        "label": "API-интеграция с Совкомбанком",
+        "value": "настроена"
+      }
+    },
+    "portfolio": {
+      "id": "portfolio",
+      "title": "Портфель 9 проектов",
+      "building": "rssm",
+      "duration": 180,
+      "maxScore": 200,
+      "description": "Распределите 9 проектов по 3 командам",
+      "metrics": {
+        "label": "Портфель проектов",
+        "value": "9 проектов · 16 млн ₽ · экономия ~X млн ₽"
+      }
+    },
+    "rollout": {
+      "id": "rollout",
+      "title": "Bitrix24 для 190 пользователей",
+      "building": "dobro-rf",
+      "duration": 90,
+      "maxScore": 200,
+      "description": "Обучите 10 регионов за 45 секунд",
+      "metrics": {
+        "label": "Bitrix24 внедрён",
+        "value": "190 пользователей · +X% скорость процессов"
+      }
+    }
+  },
+  "achievements": [
+    {
+      "id": "perfect",
+      "icon": "🏆",
+      "name": "Идеальное прохождение",
+      "condition": "score >= 900"
+    },
+    {
+      "id": "senior",
+      "icon": "⭐",
+      "name": "Senior Analyst",
+      "condition": "score >= 700"
+    },
+    {
+      "id": "speedrun",
+      "icon": "⚡",
+      "name": "Спидран",
+      "condition": "time < 480"
+    },
+    {
+      "id": "antifraud_master",
+      "icon": "🛡️",
+      "name": "Антифрод-мастер",
+      "condition": "antifraud.accuracy >= 0.9"
+    },
+    {
+      "id": "api_guru",
+      "icon": "🔌",
+      "name": "API-гуру",
+      "condition": "integration.errors === 0"
+    },
+    {
+      "id": "implementer",
+      "icon": "🚀",
+      "name": "Внедренец",
+      "condition": "rollout.regions === 10"
+    }
+  ]
+}
